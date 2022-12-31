@@ -1,0 +1,19 @@
+2022-11-10 11:21:19.125 +05:00 [INF] User profile is available. Using 'C:\Users\donko\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-10 11:21:20.370 +05:00 [INF] Now listening on: https://localhost:7231
+2022-11-10 11:21:20.531 +05:00 [INF] Now listening on: http://localhost:5204
+2022-11-10 11:21:20.678 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-10 11:21:20.816 +05:00 [INF] Hosting environment: Development
+2022-11-10 11:21:20.946 +05:00 [INF] Content root path: C:\Users\donko\OneDrive\Ishchi stol\identity\
+2022-11-10 11:21:30.177 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7231/ - -
+2022-11-10 11:21:30.491 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7231/ - - - 404 0 - 305.1669ms
+2022-11-10 11:21:45.199 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7231/swagger/index.html - -
+2022-11-10 11:21:45.462 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7231/swagger/index.html - - - 200 - text/html;charset=utf-8 263.1988ms
+2022-11-10 11:21:45.756 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7231/swagger/v1/swagger.json - -
+2022-11-10 11:21:46.013 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7231/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 257.3544ms
+2022-11-10 11:21:51.283 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7231/api/Users - -
+2022-11-10 11:21:51.454 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-11-10 11:21:51.616 +05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2022-11-10 11:21:51.748 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7231/api/Users - - - 302 0 - 465.8190ms
+2022-11-10 11:21:51.755 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7231/Account/Login?ReturnUrl=%2Fapi%2FUsers - -
+2022-11-10 11:21:52.012 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7231/Account/Login?ReturnUrl=%2Fapi%2FUsers - - - 404 0 - 256.9989ms

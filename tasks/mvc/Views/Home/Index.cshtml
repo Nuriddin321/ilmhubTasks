@@ -1,0 +1,20 @@
+﻿@model Number
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<form method="POST" asp-controller="Home" asp-action="Index">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Input number</label>
+            <input asp-for="Raqam" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+   
+@* <h3>@Model.Name</h3> *@
+ <h1> @ViewBag.Word</h1>

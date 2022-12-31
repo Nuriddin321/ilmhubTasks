@@ -1,0 +1,41 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject HttpClient Http
+
+<MudButton OnClick="@(async () => await XabarYubor())">Send</MudButton>
+
+@foreach (var item in _messagelaniListi)
+{
+    <p>@item </p><br>
+}
+
+@code {
+    private readonly List<string> _messagelaniListi = new();
+    private HubConnection _hubConnection;
+    protected override async Task OnInitializedAsync()
+    {       
+        //birinchi frontendan turib api ga ulanvoladi
+        _hubConnection = new HubConnectionBuilder()
+            .WithUrl("https://localhost:7248/jeki")
+            .Build();
+        
+        //keyin api messageni  qaysi metodga yuborvotganini aniqliydi va shu metodni ishga tushiradi 
+
+        _hubConnection.On<string>("MessageHandler", (message) => 
+        {
+            _messagelaniListi.Add(message);
+            InvokeAsync(StateHasChanged); // bu metod pageni qayta rendr qiberadi
+        });
+        
+        await _hubConnection.StartAsync();
+    }
+
+    private async Task XabarYubor() // bu metod xabarni  apining "MessageYubor" metodiga yuboradi 
+    {
+        if(_hubConnection.State == HubConnectionState.Connected)
+        {
+            await _hubConnection.SendAsync("MessageYubor", "nma gap brat");
+        }
+    }
+}
+ 

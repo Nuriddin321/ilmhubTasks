@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST" asp-controller="Home" asp-action="Index">
+   
+        <div class="form-group">
+            <label for="exampleInputPassword1">Input number</label>
+            <input asp-controller="Home" asp-action="Index" type="text" class="form-control">
+            <p>@Model.Name</p>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+</form>
